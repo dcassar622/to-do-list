@@ -6,10 +6,11 @@
 
 #page-wrapper {
     width: 100vw;
-    margin-top: 1.5rem;
+    height: 98vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: linear-gradient(to bottom, teal, white);
 }
 
 button {
@@ -21,11 +22,14 @@ button {
 
 #header-section {
     width: 100vw;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: center;
     padding: 30px 0 30px 0;
     font-family: 'Work Sans', 'Arial', sans-serif;
     background: rgb(73, 64, 64);
+    box-shadow: 0px 2px 10px 5px black
 }
 
 .new-project-btn {
@@ -36,19 +40,23 @@ button {
 /* to-do section styling */
 
 #todo-section {
-    display: flex;
-    width: 60%;
-    justify-content: space-around;
-    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10rem;
+    row-gap: 7rem;
+    margin-top: 6rem;
+    height: auto;
 }
 
 .project-div {
     background-image: linear-gradient(to bottom, rgb(194, 135, 107), rgb(63, 155, 192));
     border-radius: 1rem;
+    box-shadow: 1px 1px 5px 5px black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: auto;
+    width: 100%;
     font-family: 'Work Sans', 'Arial', sans-serif;
 }
 
@@ -57,7 +65,7 @@ button {
 .project-name {
     display: flex;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     padding: 1rem;
     font-weight: 500;
     width: 100%;
@@ -88,14 +96,27 @@ button {
 }
 
 .list-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: white;
     text-decoration: underline;
+}
+
+.list-description {
+    font-size: 1.4rem;
+    font-style: italic;
 }
 
 .remove-list-btn {
     margin-top: 1.5rem;
     display: block;
+}
+
+.remove-list-btn:hover {
+    cursor: pointer;
+    background: rgb(73, 64, 64);
+    color: white;
+    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 label {
@@ -111,7 +132,7 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: space-bet;
-    padding: 10px 5px 5px 5px;
+    padding: 10px 5px 10px 5px;
     margin-top: 4rem;
     background: rgba(0, 0, 0, 0.829);
     border-radius: 5px;
@@ -131,6 +152,18 @@ label {
     background: rgb(194, 135, 107);
 }
 
+.del-project-btn:hover {
+    cursor: pointer;
+    background: rgb(209, 93, 38);
+    transform: scale(1.05);
+}
+
 .add-list-btn {
     background: rgb(63, 155, 192);
+}
+
+.add-list-btn:hover {
+    cursor: pointer;
+    background: rgb(26, 182, 182);
+    transform: scale(1.05);
 }
