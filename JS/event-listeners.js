@@ -18,6 +18,9 @@ export function setupEventListeners(projectManager, display) {
     let newListTitle = prompt('Item Name');
     let newListDescription = prompt('Item Description');
     let newListPriority = prompt('Item Priority (low / medium / high');
+
+    setPriorityClassName(newListPriority);
+
     let newList = new List(newListTitle, newListDescription, newListPriority);
     
     projectManager.projectArray.forEach(project => {
@@ -44,5 +47,33 @@ export function setupEventListeners(projectManager, display) {
         }
     })
   }
+  else if (buttonType === 'del-project-btn') {
+    let chosenProject = event.target.dataset.key;
+  
+    projectManager.projectArray.forEach(project => {
+      if (chosenProject === project.name) {
+           projectManager.deleteProject(project);
+          }
+        })
+      display.clearDisplay();
+      display.updateDisplay(projectManager);
+    }
   })
+}
+
+
+
+function setPriorityClassName(priority) {
+  if (priority === 'low')
+  {
+    priority.className = 'list-priority low';
+  }
+  else if (priority === 'medium')
+  {
+    priority.className = 'list-priority medium';
+  }
+  if (priority === 'high')
+  {
+    priority.className = 'list-priority high';
+  }
 }

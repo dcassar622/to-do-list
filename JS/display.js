@@ -30,7 +30,7 @@ export class Display {
     projectDiv.setAttribute('data-key', project.name);
 
     let projectName = document.createElement('h3');
-    projectName.id = 'project-name';
+    projectName.className = 'project-name';
     projectName.textContent = project.name;
 
     let addListBtn = document.createElement('button');
@@ -39,9 +39,7 @@ export class Display {
     addListBtn.setAttribute('data-key', project.name);
 
     projectDiv.appendChild(projectName);
-    projectDiv.appendChild(addListBtn);
-
-
+    
     project.projectItems.forEach(list => {
       let listDiv = document.createElement('div');
       listDiv.className = 'list-div';
@@ -59,6 +57,9 @@ export class Display {
       listPriority.className = 'list-priority';
       listPriority.textContent = list.priority;
 
+      let completedLabel = document.createElement('label');
+      completedLabel.innerHTML = 'Completed'
+
       let listCompleted = document.createElement('input');
       listCompleted.setAttribute('type', 'checkbox');
       listCompleted.className = 'list-completed';
@@ -72,11 +73,24 @@ export class Display {
       listDiv.appendChild(listTitle);
       listDiv.appendChild(listDescription);
       listDiv.appendChild(listPriority);
+      listDiv.appendChild(completedLabel);
       listDiv.appendChild(listCompleted);
       listDiv.appendChild(removeListBtn);
 
       projectDiv.appendChild(listDiv);
     }) 
+
+    let delProjectBtn = document.createElement('button');
+    delProjectBtn.innerHTML = 'Delete Project';
+    delProjectBtn.className = 'del-project-btn';
+    delProjectBtn.setAttribute('data-key', project.name);
+
+    let buttonDiv = document.createElement('div');
+    buttonDiv.className = 'button-div';
+
+    buttonDiv.appendChild(addListBtn);
+    buttonDiv.appendChild(delProjectBtn);
+    projectDiv.appendChild(buttonDiv);
 
     const todoSection = document.getElementById('todo-section');
     todoSection.appendChild(projectDiv);

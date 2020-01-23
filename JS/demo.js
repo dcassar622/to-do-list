@@ -3,8 +3,8 @@ import { Project } from '../JS/project.js';
 
 export function setupDemo(projectManager, display) 
 {
-  let project1 = new Project('project1');
-  let project2 = new Project('project2');
+  let project1 = new Project('Project 1');
+  let project2 = new Project('Project 2');
   
   let list1 = new List('Buy Groceries', 'blah blah blah', 'medium');
   let list2 = new List('Check Oil Levels', 'hmmmmm', 'high');

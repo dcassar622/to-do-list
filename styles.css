@@ -17,31 +17,120 @@ button {
     border-radius: 5px;
 }
 
+/* header styling */
+
+#header-section {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 30px 0;
+    font-family: 'Work Sans', 'Arial', sans-serif;
+    background: rgb(73, 64, 64);
+}
+
+.new-project-btn {
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
 /* to-do section styling */
 
 #todo-section {
     display: flex;
     width: 60%;
     justify-content: space-around;
+    margin-top: 3rem;
 }
 
 .project-div {
-    background: rgb(194, 135, 107);
-    padding: 1rem;
+    background-image: linear-gradient(to bottom, rgb(194, 135, 107), rgb(63, 155, 192));
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    font-family: 'Work Sans', 'Arial', sans-serif;
 }
 
-/* list styling */
+/* project styling */
+
+.project-name {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    padding: 1rem;
+    font-weight: 500;
+    width: 100%;
+    text-shadow: 1px 1px 5px rgb(63, 155, 192);
+}
 
 .list-div {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.list-div:first-of-type {
+    margin-top: 1.5rem;
+}
+
+.list-div p {
+    margin-top: 1rem;
+}
+
+.list-div input[type=checkbox] {
+    position: relative;
+    margin-top: 0.5rem;
+    margin-left: 5px;
+    transform: scale(1.25);
+}
+
+.list-title {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: underline;
 }
 
 .remove-list-btn {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: block;
 }
 
-.add-list-btn {
-    margin-top: 0.5rem;
+label {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+/* button div styling */
+
+.button-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-bet;
+    padding: 10px 5px 5px 5px;
+    margin-top: 4rem;
+    background: rgba(0, 0, 0, 0.829);
+    border-radius: 5px;
+}
+
+.add-list-btn, .del-project-btn {
+    margin-top: 0.75rem;
     display: block;
+    color: white;
+    background: black;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.del-project-btn {
+    margin-top: 1.5rem;
+    background: rgb(194, 135, 107);
+}
+
+.add-list-btn {
+    background: rgb(63, 155, 192);
 }
